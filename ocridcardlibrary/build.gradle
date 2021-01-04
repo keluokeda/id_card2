@@ -30,9 +30,12 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    api files('libs/idcard_sdk.jar')
-    api files('libs/android_auth.jar')
-    api files('libs/pki.jar')
+    implementation files('libs/idcard_sdk.jar')
+    compileOnly files('libs/android_auth.jar')
+    compileOnly files('libs/pki.jar')
+//    compileOnly files('src/main/jniLibs/android_auth.jar')
+//    implementation files('src/main/jniLibs/idcard_sdk.jar')
+//    compileOnly files('src/main/jniLibs/pki.jar')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     /*compileOnly files('libs/pki.jar')
         compileOnly files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
