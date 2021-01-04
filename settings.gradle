@@ -1,0 +1,3 @@
+include ':ocridcardlibrary'
+include ':app'
+rootProject.name = "idcard2_demo"

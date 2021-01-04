@@ -1,0 +1,56 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kernal.passportreader.sdk">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
+
+
+        <activity
+            android:name="com.kernal.passportreader.sdk.CardsCameraActivity"
+            android:exported="false"
+            android:resizeableActivity="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+            <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+            <!-- android:configChanges="orientation|keyboardHidden|screenSize"-->
+            <!-- android:screenOrientation="portrait"-->
+
+        </activity>
+
+        <service
+            android:name="kernal.idcard.android.AuthService"
+            android:enabled="true"
+            android:exported="false">
+            <!--<intent-filter>-->
+            <!--<action android:name="kernal.idcard.authService" />-->
+            <!--</intent-filter>-->
+        </service>
+
+        <service
+            android:name="kernal.idcard.android.RecogService"
+            android:enabled="true"
+            android:exported="false">
+            <!--<intent-filter>-->
+            <!--<action android:name="kernal.idcard.recogService" />-->
+            <!--</intent-filter>-->
+        </service>
+        <service
+            android:name="kernal.idcard.android.TimeService"
+            android:enabled="true"
+            android:exported="false">
+            <!--<intent-filter>-->
+            <!--<action android:name="kernal.idcard.TimeService" />-->
+            <!--</intent-filter>-->
+        </service>
+
+        <receiver android:name="kernal.idcard.android.DataChangeReceiver" />
+
+    </application>
+</manifest>

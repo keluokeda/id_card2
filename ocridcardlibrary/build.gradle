@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.keluokeda'
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "2.0.0.7"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//   repositories {
+//       flatDir{
+//           dir 'libs'
+//       }
+//   }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    api files('libs/idcard_sdk.jar')
+    api files('libs/android_auth.jar')
+    api files('libs/pki.jar')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    /*compileOnly files('libs/pki.jar')
+        compileOnly files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
+        compileOnly files('libs/bcprov-ext-jdk15-146.jar')
+        compileOnly files('libs/android_auth.jar')*/
+    //api(name:"app_sdk",ext:'aar')
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+}
+repositories {
+    mavenCentral()
+}
