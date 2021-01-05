@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation files('libs/idcard_sdk.jar')
 //    implementation files('libs/android_auth.jar')
