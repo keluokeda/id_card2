@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
 //        RxPermissions(this).request(Manifest.permission.READ_PHONE_STATE).subscribe()
 
         findViewById<Button>(R.id.camera).setOnClickListener {
